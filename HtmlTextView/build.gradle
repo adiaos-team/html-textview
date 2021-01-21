@@ -22,5 +22,7 @@ publish {
 
 dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
+    api files('libs/htmlcleaner-2.22.jar')
+    api files('libs/cssparser-1.5.jar')
 
  }

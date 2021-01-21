@@ -1,5 +1,11 @@
 buildscript {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        //    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+        // maven { url "https://maven.google.com" }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
         google()
         jcenter()
     }
@@ -11,6 +17,12 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+        //    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+        // maven { url "https://maven.google.com" }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
         google()
         jcenter()
     }

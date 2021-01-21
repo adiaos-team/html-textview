@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
         textView.setListIndentPx(metrics.density * 10);
 
         // a tag click listener
-        textView.setOnClickATagListener(new OnClickATagListener() {
+     /*   textView.setOnClickATagListener(new OnClickATagListener() {
             @Override
             public boolean onClick(View widget, String spannedText, @Nullable String href) {
                 final Toast toast = Toast.makeText(MainActivity.this, null, Toast.LENGTH_SHORT);
@@ -81,11 +81,11 @@ public class MainActivity extends Activity {
 
                 return false;
             }
-        });
+        });*/
         textView.blockQuoteBackgroundColor = getResources().getColor(R.color.whitish);
         textView.blockQuoteStripColor = getResources().getColor(R.color.blue);
 
-        textView.setHtml(R.raw.example, new HtmlResImageGetter(getBaseContext()));
+        textView.setHtml(R.raw.example1, new HtmlResImageGetter(getBaseContext()));
     }
 
     @Override
@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_view_data_binding) {
-            startActivity(new Intent(this, DataBindingExampleActivity.class));
+           // startActivity(new Intent(this, DataBindingExampleActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

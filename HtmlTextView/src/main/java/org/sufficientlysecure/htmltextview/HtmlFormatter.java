@@ -14,9 +14,11 @@
 
 package org.sufficientlysecure.htmltextview;
 
-import android.text.Html;
 import android.text.Html.ImageGetter;
+import android.text.Spannable;
 import android.text.Spanned;
+
+import org.sufficientlysecure.htmlspanner.HtmlSpanner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,13 +53,21 @@ public class HtmlFormatter {
 
         html = htmlTagHandler.overrideTags(html);
 
-        Spanned formattedHtml;
+      /*  Spanned formattedHtml;
         if (removeTrailingWhiteSpace) {
             formattedHtml = removeHtmlBottomPadding(Html.fromHtml(html, imageGetter, new WrapperContentHandler(htmlTagHandler)));
         } else {
             formattedHtml = Html.fromHtml(html, imageGetter, new WrapperContentHandler(htmlTagHandler));
-        }
+        }*/
+        Spannable formattedHtml;
+        HtmlSpanner htmlSpanner = new HtmlSpanner(null, imageGetter, null);;
 
+        if (removeTrailingWhiteSpace) {
+
+            formattedHtml=htmlSpanner.fromHtml(html);
+        } else {
+            formattedHtml= htmlSpanner.fromHtml(html);
+        }
         return formattedHtml;
     }
 
